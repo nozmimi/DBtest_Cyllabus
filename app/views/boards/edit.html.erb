@@ -1,0 +1,11 @@
+ <%= link_to "編集せずに戻る", "/boards/#{@board.id}" %>
+ <hr>
+ <h1>タイトルの編集</h1>
+ <%= form_tag "/boards/#{@board.id}", method: :put do %>
+   タイトル: <%= text_field_tag :title, @board.title %> 
+   <br>
+   作成者名: <%= text_field_tag :editor, @board.editor %> 
+   <br>
+   <hr>
+ 	<%= submit_tag %>
+ <% end %>
