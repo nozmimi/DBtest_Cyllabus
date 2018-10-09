@@ -1,9 +1,9 @@
- <%= link_to "スレッド一覧に戻る", "/boards" %>
+ <%= link_to "スレッド一覧に戻る", boards_path %>
  <hr>
  <h1><%= @board.title %></h1>
  <p><%= @board.editor %></p>
  <br>
- <%= link_to "タイトルを編集する", "/boards/#{@board.id}/edit" %>
+ <%= link_to "タイトルを編集する", edit_board_path(@board) %>
  <br>
- <%= link_to "削除する", "/boards/#{@board.id}", method: :delete, data: { confirm: "本当に削除しますか？" } %>
+ <%= link_to "削除する", board_path(@board), method: :delete, data: { confirm: "本当に削除しますか？" } %>
  <hr>

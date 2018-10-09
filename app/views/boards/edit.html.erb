@@ -1,8 +1,9 @@
- <%= link_to "編集せずに戻る", "/boards/#{@board.id}" %>
+ <%= link_to "編集せずに戻る", board_path(@board) %>
  <hr>
  <h1>タイトルの編集</h1>
  <br>
- <%= form_tag "/boards/#{@board.id}", method: :put do %>
+ 
+ <%= form_for @board do |f| %>
    タイトル: <%= text_field_tag :title, @board.title %> 
    <br>
    <br>

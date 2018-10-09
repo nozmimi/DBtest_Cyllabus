@@ -12,7 +12,7 @@
    def create
      @board = Board.new(params_board)
      @board.save
-     redirect_to "/boards"
+     redirect_to "/boards/#{@board.id}"
    end
  
   def show
@@ -26,14 +26,14 @@
    def update
      @board = Board.find(params[:id])
      @board.update_attributes(params_board)
-     redirect_to "/boards/#{@board.id}"
+     redirect_to "/boards"
    end
  
     def destroy
      @board = Board.find(params[:id])
      @board.destroy
      redirect_to "/boards"
-   end
+    end
  
    private
  

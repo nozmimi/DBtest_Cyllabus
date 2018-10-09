@@ -1,9 +1,12 @@
  <h1>３ちゃんねる。</h1>
-  <p><%= link_to "スレッド新規作成", "/boards/new" %></p>
+  <p><%= link_to "スレッド新規作成", new_board_path %></p>
  
  <hr>
  <% @boards.each do |board| %>
- 	<h3><%= link_to board.title, "/boards/#{board.id}" %> </h3>
- 	<p><%= board.editor %></p>
+ 	<h3><%= link_to board.title, board_path(board) %> </h3>
+ 	<br>
+ 	<p>作成者：<%= board.editor %></p>
+ 	<p>作成日：<%= board.created_at %></p>
+ 	<p>更新日：<%= board.updated_at %></p>
  	<hr>
  <% end %>
