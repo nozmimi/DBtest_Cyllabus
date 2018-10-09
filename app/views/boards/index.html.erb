@@ -1,5 +1,6 @@
  <h1>３ちゃんねる。</h1>
- <%= link_to "スレッド新規作成", "/boards/new" %>
+  <p><%= link_to "スレッド新規作成", "/boards/new" %></p>
+ 
  <hr>
  <% @boards.each do |board| %>
  	<h3><%= link_to board.title, "/boards/#{board.id}" %> </h3>
